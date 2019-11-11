@@ -24,4 +24,5 @@ cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask
 ## 2) Network Architecture
 
 
+
 ## Citation
