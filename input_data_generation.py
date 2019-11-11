@@ -143,23 +143,53 @@ transforms_guide = transforms.Compose([
     transforms.ToTensor()
 ])
 
+# ground truth image and guideline: I_gt, L_gt
 img, guide = transform(read_img(img_path), read_img(guide_path))
 guide = torch.round(guide[0])
 
+# color prior
 color_prior = random_color_prior(img) # img shape: torch.Size([3, 512, 512])
+# imperfect guieline: \widetilde{L}
 imperfect_guideline = random_gl_pt(guide) # guide shape: torch.Size([1, 512, 512])
 
-# guide_perturb
-img_save = Image.fromarray(np.array(imperfect_guideline[0] * 255).astype('uint8'), 'L')
-img_save.save('./data/result_guide.png')
+# mask, M
+# mask = (np.array(read_img(mask_path))>0).astype('uint8')
+mask = np.array(read_img(mask_path))
+toTensor = transforms.ToTensor()
+mask_tensor = toTensor(mask)
 
-# mask
-mask = (np.array(read_img(mask_path))>0).astype('uint8')
+# no_color_mask, M_cp
+no_color = ((color_prior + (1 - mask_tensor)) == 0)  # need to check
+no_color = ((no_color[0, :, :] + no_color[1, :, :] + no_color[2, :, :]) > 1.5).unsqueeze(2).type(torch.float32)
 
-# color_prior * mask
+# no_edge_zone, N
+no_edge = cv2.Canny(np.array(no_color * 255).astype('uint8'), 100, 200)
+kernel = np.ones([(np.round(img.shape[1]/100)).astype('uint8'), (np.round(img.shape[2])/100).astype('uint8')])
+no_edge = cv2.dilate(no_edge, kernel)
+no_edge = torch.tensor(no_edge / 255).unsqueeze(0).type(torch.float32)
+no_edge = (1 - guide) * no_edge
+
+transPIL = transforms.ToPILImage()
+
+# save cropped ground truth image and guideline: I_gt, L_gt
+img_save = Image.fromarray(np.array(img * 255).astype('uint8').transpose(1, 2, 0), 'RGB')
+img_save.save('./data/result_crop_image_gt.png')
+img_save = Image.fromarray(np.array(guide * 255).astype('uint8'), 'L')
+img_save.save('./data/result_crop_guideline_gt.png')
+
+# save color prior: I_cp ( color_prior * mask )
+mask = (mask>0).astype('uint8')
 img_save = Image.fromarray(np.array(color_prior* 255).astype('uint8').transpose(1, 2, 0)*mask, 'RGB')
 img_save.save('./data/result_color_prior.png')
 
-# imgage
-img_save = Image.fromarray(np.array(img * 255).astype('uint8').transpose(1, 2, 0), 'RGB')
-img_save.save('./data/result_crop_image.png')
+# save imperfect guieline: \widetilde{L}
+img_save = Image.fromarray(np.array(imperfect_guideline[0] * 255).astype('uint8'), 'L')
+img_save.save('./data/result_imperfect_guideline.png')
+
+# save no_color_mask, M_cp
+img_save = transPIL(no_color.permute(2,0,1))
+img_save.save('./data/result_no_color_mask.png')
+
+# save no_edge_zone, N
+img_save = transPIL(no_edge)
+img_save.save('./data/result_no_edge_zone.png')

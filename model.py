@@ -251,7 +251,6 @@ class SNDirciminator(nn.Module):
 class Self_Attn(nn.Module):
     """
         Self attention Layer
-        pytorch implementation from : https://github.com/avalonstrel/GatedConvolution_pytorch
     """
     def __init__(self,in_dim,activation,with_attn=False):
         super(Self_Attn,self).__init__()
@@ -289,9 +288,7 @@ class Self_Attn(nn.Module):
             return out
 
 class ContextualAttention(nn.Module):
-    """
-    pytorch implementation from : https://github.com/DAA233/generative-inpainting-pytorch
-    """
+
     def __init__(self, ksize=3, stride=1, rate=1, fuse_k=3, softmax_scale=10,
                  fuse=False, use_cuda=True, device_ids=None):
         super(ContextualAttention, self).__init__()

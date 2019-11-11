@@ -5,10 +5,6 @@ import numpy as np
 from PIL import Image
 import torch.nn.functional as F
 
-'''
-    source code from : https://github.com/DAA233/generative-inpainting-pytorch
-'''
-
 def pil_loader(path):
     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
     with open(path, 'rb') as f:
