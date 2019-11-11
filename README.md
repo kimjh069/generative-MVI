@@ -4,14 +4,15 @@ This repository provides codes including network architecture and input data gen
 
 ## 1) Network Architecture
 <img src="./data/Network_G_D.png"></img>
+The generator and discriminator of proposing network is provided in the python file 'model.py'.
 
 ## 2) Input data generation
-Example image, guideline and mask are prepared in the directory, './data'.<br/>
+Example image, guideline and mask are prepared in the 'data' directory.<br/>
 <img src="./data/sample_image.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_guideline.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_mask.png" width="200px" height="200px"></img><br/>
 
-You can run the code to generate sample input data.
+You can run the code to generate sample data of inputs.
 ```bash
 python input_data_generation.py
 ```
