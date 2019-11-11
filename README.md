@@ -6,16 +6,15 @@ This repository provides codes including network architecture and input data gen
 <img src="./data/Network_G_D.png"></img>
 
 ## 2) Input data generation
-```bash
-python input_data_generation.py
-```
-
-For example, prepare an example image, guideline and mask.<br/>
-
+Example image, guideline and mask are prepared in the directory, './data'.<br/>
 <img src="./data/sample_image.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_guideline.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_mask.png" width="200px" height="200px"></img><br/>
 
+You can run the code to generate sample input data.
+```bash
+python input_data_generation.py
+```
 Following images will be saved :
 cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask M_cp, imperfect guideline ~L and no edge zone N.
 <br/>
