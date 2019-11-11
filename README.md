@@ -2,4 +2,4 @@
 
 [image1](./data/result_imperfect_guideline.png)
 
-## Citation
+<!-- ## Citation -->
