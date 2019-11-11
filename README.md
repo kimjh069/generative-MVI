@@ -1,5 +1,24 @@
-# Generative Multi-view Inpainting \\for Image-based Rendering of Large Indoor Spaces
+# Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces
 
-[image1](./data/result_imperfect_guideline.png)
+## 1) Input data generation
+=======
+```bash
+python input_data_generation.py
+```
 
-<!-- ## Citation -->
+For example, prepare an example image, guideline and mask.<br/>
+<img src="./data/sample_image.png" width="200px" height="200px"></img>
+<img src="./data/sample_guideline.png" width="200px" height="200px"></img>
+<img src="./data/sample_mask.png" width="200px" height="200px"></img><br/>
+
+Following images will be saved :
+cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask M_cp, imperfect guideline ~L and no edge zone N.
+<br/>
+<img src="./data/result_crop_image_gt.png" width="200px" height="200px"></img>
+<img src="./data/result_crop_guideline_gt.png" width="200px" height="200px"></img>
+<img src="./data/result_color_prior.png" width="200px" height="200px"></img>
+<img src="./data/result_no_color_mask.png" width="200px" height="200px"></img>
+<img src="./data/result_imperfect_guideline.png" width="200px" height="200px"></img>
+<img src="./data/result_no_edge_zone.png" width="200px" height="200px"></img><br/>
+
+## Citation
