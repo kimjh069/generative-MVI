@@ -1,6 +1,6 @@
 # Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces
 
-This repository provides codes including network architecture and input data generation from the work "Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces" submitted to CVPR2020.
+This repository provides codes including network architecture, input data generation and Anti-specificity Loss proposed in the work "Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces" submitted to CVPR2020.
 
 ## 1) Network Architecture
 <img src="./data/Network_G_D.png"></img>
@@ -27,4 +27,5 @@ cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask
 <img src="./data/result_no_edge_zone.png" width="200px" height="200px"></img><br/>
 
 
-## Citation
+## 3) Anti-specificity Loss
+<img src="./data/Anti-specificity loss.gif"></img><br/>
