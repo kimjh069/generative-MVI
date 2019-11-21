@@ -1,4 +1,4 @@
-# Generative MVI
+# Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces
 
 This repository will provide codes including network architecture, input data generation and Anti-specificity Loss proposed in our paper.
 
