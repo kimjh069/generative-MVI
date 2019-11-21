@@ -8,6 +8,7 @@ The generator and discriminator of proposing network will be provided in the pyt
 
 ## 2) Training input data generation
 Example image, guideline and mask are prepared in the 'data' directory.<br/>
+The image is a sample test image from Places2 dataset ([Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://arxiv.org/abs/1710.10196)). <br/>
 <img src="./data/sample_image.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_guideline.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_mask.png" width="200px" height="200px"></img><br/>
