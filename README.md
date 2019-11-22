@@ -30,4 +30,4 @@ cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask
 
 ## 3) Anti-specificity Loss
 <img src="./data/Anti-specificity loss.gif"></img><br/>
-The source code for the anti-specificity loss will be also available.
+The source code for the anti-specificity loss will be also available in 'Loss.py'.
