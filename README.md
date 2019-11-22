@@ -1,18 +1,19 @@
 # Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces
 
-This repository provides codes including network architecture and input data generation from the work "Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces" submitted to CVPR2020.
+This repository will provide codes including network architecture, input data generation and Anti-specificity Loss proposed in our paper.
 
 ## 1) Network Architecture
 <img src="./data/Network_G_D.png"></img>
-The generator and discriminator of proposing network is provided in the python file 'model.py'.
+The generator and discriminator of proposing network will be provided in the python file 'model.py'.
 
-## 2) Input data generation
+## 2) Training input data generation
 Example image, guideline and mask are prepared in the 'data' directory.<br/>
+The image is a sample test image from Places2 dataset ([Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://arxiv.org/abs/1710.10196)). <br/>
 <img src="./data/sample_image.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_guideline.jpg" width="200px" height="200px"></img>
 <img src="./data/sample_mask.png" width="200px" height="200px"></img><br/>
 
-You can run the code to generate sample data of inputs.
+You will be able to run the code to generate sample training input data.
 ```bash
 python input_data_generation.py
 ```
@@ -27,4 +28,6 @@ cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask
 <img src="./data/result_no_edge_zone.png" width="200px" height="200px"></img><br/>
 
 
-## Citation
+## 3) Anti-specificity Loss
+<img src="./data/Anti-specificity loss.gif"></img><br/>
+The source code for the anti-specificity loss will be also available.
