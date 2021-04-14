@@ -1,6 +1,6 @@
-# Generative Multi-view Inpainting for Image-based Rendering of Large Indoor Spaces
+# Generative multiview inpainting for object removal in large indoor spaces
 
-This repository will provide codes including network architecture, input data generation and Anti-specificity Loss proposed in our paper.
+This repository provides codes including network architecture, input data generation and Anti-specificity Loss proposed in our paper (https://journals.sagepub.com/doi/10.1177/1729881421996544).
 
 ## 1) Network Architecture
 <img src="./data/Network_G_D.png"></img>
@@ -31,3 +31,18 @@ cropped ground truth image I_gt, guideline L_gt, color prior I_cp, no color mask
 ## 3) Anti-specificity Loss
 <img src="./data/Anti-specificity loss.gif"></img><br/>
 The source code for the anti-specificity loss will be also available in 'Loss.py'.
+
+
+## Citation
+
+Please consider citing the corresponding publication if you use this work in an academic context:
+```
+@article{kim2021generative,
+  title={Generative multiview inpainting for object removal in large indoor spaces},
+  author={Kim, Joohyung and Hyeon, Janghun and Doh, Nakju},
+  journal={International Journal of Advanced Robotic Systems},
+  volume={18},
+  number={2},
+  year={2021},
+  publisher={SAGE Publications Sage UK: London, England}
+}
