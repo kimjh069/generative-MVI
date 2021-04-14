@@ -1,6 +1,6 @@
 # Generative multiview inpainting for object removal in large indoor spaces
 
-This repository provides codes including network architecture, input data generation and Anti-specificity Loss proposed in our paper (https://journals.sagepub.com/doi/10.1177/1729881421996544).
+This repository provides codes including network architecture, input data generation and Anti-specificity Loss proposed in our [paper](https://journals.sagepub.com/doi/10.1177/1729881421996544).
 
 ## 1) Network Architecture
 <img src="./data/Network_G_D.png"></img>
